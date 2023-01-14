@@ -20,14 +20,26 @@ body {
 	overflow: hidden;
 }
 #blog-wrap {
-	width: 100%;
+	width: calc(100% - 200px);
 	max-width: 700px;
-	max-height: calc(100vh - 74px);
+	max-height: calc(100vh - 75px);
 	margin: 0 auto;
-	box-sizing: content-box;
-	padding: 0 100px;
+	box-sizing: border-box;
+	padding: 0 4px 20px 0;
 	padding-top: 2rem;
 	overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+}
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #f9f9f937;
+	border-radius: 999px;
 }
 
 #logo {
@@ -143,7 +155,7 @@ h1 {
 }
 
 .subtitle {
-	padding: 0.5rem 0;
+	padding: 1.5rem 0 0.5rem 0;
 	font-weight: 500;
 }
 
@@ -161,4 +173,49 @@ article {
 	width: 80%;
 	display: block;
 	margin: 0 auto 1rem auto;
+}
+
+.list-heading {
+	margin: 0.5rem 1rem;
+	font-weight: 600;
+}
+
+ul {
+	margin: 0 2.5rem;
+	width: max-content;
+}
+
+li {
+	margin: 4px 0;
+}
+
+.flex-container {
+	display: flex;
+}
+
+.container-left,
+.container-right {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.container-right img {
+	height: 120%;
+	width: 120%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.container-right:has(img) {
+	padding-right: 1rem;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.article-image {
+	margin: 1rem auto;
+	width: calc(100% - 2rem);
+	border-radius: 10px;
+	display: block;
 }
