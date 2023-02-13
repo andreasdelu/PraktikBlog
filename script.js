@@ -42,6 +42,7 @@ function menuItemHoverStop() {
 }
 
 function toggleArticle(id, index) {
+	const blogWrap = document.getElementById("blog-wrap");
 	articles.forEach((article) => {
 		article.style.display = "none";
 	});
@@ -50,4 +51,5 @@ function toggleArticle(id, index) {
 		item.classList.remove("menuItemSelected");
 	});
 	menuItems[index].classList.add("menuItemSelected");
+	blogWrap.scroll(0, -10000);
 }
